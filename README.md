@@ -1,13 +1,3 @@
-# Stable coin characteristics:
-1. Relative stability: Pegged -> $1.00
-    1. Using Chainlink price feed
-    2. Set a function to exchange ETH and BTC -> $$$
-2. Stability mechanism (minting): Algorithmic (Decentralized)
-    1. People can mint only with enough collateral (coded)
-3. Collateral type: Exogenous (Crypto)
-    1. wETH
-    2. wBTC
-
 # Foundry DeFi Stablecoin
 
 # About
@@ -15,6 +5,7 @@
 This project is meant to be a stablecoin where users can deposit WETH and WBTC in exchange for a token that will be pegged to the USD.
 
 - [Foundry DeFi Stablecoin](#foundry-defi-stablecoin)
+- [Stable coin characteristics](#stable-coin-characteristics)
 - [About](#about)
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
@@ -36,6 +27,17 @@ This project is meant to be a stablecoin where users can deposit WETH and WBTC i
   - [Let's talk about what "Official" means](#lets-talk-about-what-official-means)
   - [Summary](#summary)
 - [Thank you!](#thank-you)
+
+# Stable coin characteristics
+
+1. Relative stability: Pegged -> $1.00
+    1. Using Chainlink price feed
+    2. Set a function to exchange ETH and BTC -> $$$
+2. Stability mechanism (minting): Algorithmic (Decentralized)
+    1. People can mint only with enough collateral (coded)
+3. Collateral type: Exogenous (Crypto)
+    1. wETH
+    2. wBTC
 
 # Getting Started
 
@@ -163,5 +165,6 @@ To run code formatting:
 forge fmt
 ```
 # Credit 
+
 Patrik Collins and the Cyprif updraft team. Thank you !
 [![Patrick Collins Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PatrickAlphaC)
