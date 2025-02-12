@@ -5,7 +5,7 @@ import {AggregatorV3Interface} from "@chainlink/src/v0.8/interfaces/AggregatorV3
 
 /**
  * Library that checks correct functioning of the Chainlink oracle in the DSCEngine.
- * 
+ *
  * @title Oracle Library
  * @author Jakub-Kliment
  * @notice this library is used to check the Chainlink Oracle for stale data.
@@ -17,15 +17,18 @@ library OracleLib {
 
     uint256 private constant TIMEOUT = 3 hours;
 
-    function staleCheckLatestRoundSata(AggregatorV3Interface priceFeed) 
-        public view returns (uint80, int256, uint256, uint256, uint80) {
-            (uint80 roundId, int256 answer, uint256 startedAt, 
-            uint256 updatedAt, uint80 answeredInRound) = priceFeed.latestRoundData();
+    function staleCheckLatestRoundSata(AggregatorV3Interface priceFeed)
+        public
+        view
+        returns (uint80, int256, uint256, uint256, uint80)
+    {
+        (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound) =
+            priceFeed.latestRoundData();
 
-            uint256 secondsSince = block.timestamp - updatedAt;
-            if (secondsSince > TIMEOUT) {
-                revert OracleLib__StalePrice();
-            }
-            return (roundId, answer, startedAt, updatedAt, answeredInRound);
+        uint256 secondsSince = block.timestamp - updatedAt;
+        if (secondsSince > TIMEOUT) {
+            revert OracleLib__StalePrice();
+        }
+        return (roundId, answer, startedAt, updatedAt, answeredInRound);
     }
 }

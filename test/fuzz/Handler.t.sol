@@ -11,7 +11,7 @@ import {MockV3Aggregator} from "test/mocks/MockV3Aggregator.sol";
 contract Handler is Test {
     DSCEngine dsce;
     DecentralizedStableCoin dsc;
-    
+
     ERC20Mock weth;
     ERC20Mock wbtc;
 
@@ -22,7 +22,7 @@ contract Handler is Test {
 
     uint256 public timesMintIsCalled;
     address[] public usersWithCollateralDeposited;
-    
+
     constructor(DSCEngine _dscEngine, DecentralizedStableCoin _dsc) {
         dsce = _dscEngine;
         dsc = _dsc;
@@ -73,7 +73,7 @@ contract Handler is Test {
         if (amount == 0) {
             return;
         }
-        vm.startPrank(sender); 
+        vm.startPrank(sender);
         dsce.mintDsc(amount);
         vm.stopPrank();
         timesMintIsCalled++;
@@ -93,5 +93,4 @@ contract Handler is Test {
             return wbtc;
         }
     }
-
 }

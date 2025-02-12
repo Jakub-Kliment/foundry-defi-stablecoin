@@ -10,8 +10,8 @@ import {Ownable} from "@openzeppelin/access/Ownable.sol";
  * Collateral: Exogenous (ETH & BTC)
  * Minting: Algorithmic
  * Relative Stability: Pegged to USD
- * 
- * @notice 
+ *
+ * @notice
  * Contract meant to be governed by DSCEngine.
  * It's just the ERC20 implementation of the stablecoin system.
  */
@@ -43,5 +43,4 @@ contract DecentralizedStableCoin is ERC20Burnable, Ownable {
         _mint(_to, _amount);
         return true;
     }
-
 }
